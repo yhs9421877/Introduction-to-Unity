@@ -10,6 +10,12 @@ public class LifeCycle : MonoBehaviour
         Debug.Log("플레이어 데이터가 준비되었습니다.");
     }
 
+    // 게임 오브젝트가 활성화 될 때 마다 실행됨
+    void OnEnable()
+    {
+        Debug.Log("플레이어가 로그인 하였습니다.");
+    }
+
     // 업데이트 시작 직전, 최초 실행, 한번만 실행됨
     void Start()
     {
@@ -33,7 +39,12 @@ public class LifeCycle : MonoBehaviour
     {
         Debug.Log("경험치 획득");
     }
-    
+
+    void OnDisable()
+    {
+        Debug.Log("플레이어가 로그아웃 하였습니다.");
+    }
+
     // 오브젝트 삭제 직전에 실행됨
     void OnDestroy()
     {
